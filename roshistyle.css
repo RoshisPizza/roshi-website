@@ -1,0 +1,32 @@
+header{
+    background-color: blue;
+}
+
+footer{
+    background-color: gray;
+}
+
+div.content{
+    background-color: aqua;
+}
+
+div.v-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    flex-grow: inherit;
+    padding: 2%;
+    flex: 0 0 46%;
+}
+
+div.h-content-wrapper{
+    display: flex;
+    flex-direction: row;
+    background-color: blueviolet;
+    padding: 2%;
+}
+
+
+#content-projects-list{
+    flex: 0 0 100%;
+}
