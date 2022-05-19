@@ -1,0 +1,15 @@
+{
+    "header": [
+        "Roshi's Pizza",
+        "Established 2022"
+    ],
+    "content": {
+        "aboutMe": "Roshi's Pizza is very tasty. Projects listed on the right side of the screen.",
+        "siteNews": "Still building the site. This will undergo masssive changes as the year goes on.",
+        "projects": {
+            "proj1":"./proj1.html",
+            "proj2":"./proj2.html"
+        }
+    },
+    "footer": "Email roshi@roshispizza.tech for inquiries"
+}
