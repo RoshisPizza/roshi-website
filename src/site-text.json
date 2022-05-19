@@ -4,12 +4,12 @@
         "Established 2022"
     ],
     "content": {
-        "aboutMe": "Roshi's Pizza is very tasty. Projects listed on the right side of the screen.",
-        "siteNews": "Still building the site. This will undergo masssive changes as the year goes on.",
+        "aboutMe": "Roshi's Pizza is a one-person development team in eastern Massachusetts.",
+        "siteNews": "Site Updated to have Boxy CSS and garish colors. NExt step is to reconfigure DNS settings.",
         "projects": {
-            "proj1":"./proj1.html",
-            "proj2":"./proj2.html"
+            "proj1":"./pages/proj1.html",
+            "proj2":"./pages/proj2.html"
         }
     },
-    "footer": "Email roshi@roshispizza.tech for inquiries"
+    "footer": "email roshi@roshispizza.tech for inquiries"
 }

@@ -1,23 +1,72 @@
+/* dimensions declared here */
+:root {
+    --header-height: 200px;
+    --header-width: 60%;
+    --header-radius: 10%;
+
+    --content-width: 80%;
+    --projects-radius: 20%;
+
+    --footer-height: 60px;
+    --footer-width: 60%;
+    --footer-radius: 20%;
+
+    --div-color: darkgray;
+    --content-color: rgb(114, 151, 114);
+}
+
 body {
-    background-color: red;
+    background-color: lightslategray;
 }
 
 header{
-    background-color: lightblue;
-    height: 200px;
+    background-color: var(--div-color);
+    height: var(--header-height);
+    width: var(--header-width);
+    margin: auto;
+
+    border-radius: var(--header-radius);
+    
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+#header-content {
+    margin: auto;
 }
 
 #roshi-logo{
-    resize: both;
+    height: var(--header-height);
+    border-top-left-radius: var(--header-radius);
+    border-bottom-left-radius: var(--header-radius);
 }
 
 
 footer{
-    background-color: gray;
+    background-color: var(--div-color);
+    height: var(--footer-height);
+    width: var(--footer-width);
+    border-radius: var(--footer-radius);
+    margin: auto;
+    text-align: center;
+}
+
+#footer-content {
+    margin: auto;
+}
+
+div {
+    background-color: darkgray;
 }
 
 div.content{
-    background-color: aqua;
+    background-color: var(--content-color);
+    width: var(--content-width);
+    margin: auto;
+    
+    text-align: center;
+    border-radius: var(--projects-radius);
 }
 
 div.v-content-wrapper{
@@ -27,6 +76,7 @@ div.v-content-wrapper{
     flex-grow: inherit;
     padding: 2%;
     flex: 0 0 46%;
+    align-items: center;
 }
 
 div.h-content-wrapper{
@@ -34,9 +84,24 @@ div.h-content-wrapper{
     flex-direction: row;
     background-color: inherit;
     padding: 2%;
+    width: 80%;
+    margin: auto;
+    
 }
 
 
-#content-projects-list{
-    flex: 0 0 100%;
+#about-me {
+
+}
+
+#site-news {
+
+}
+
+#projects-list{
+    height: 100%;
+}
+
+h3 {
+
 }

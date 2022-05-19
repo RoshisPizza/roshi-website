@@ -1,3 +1,4 @@
+//Home Page Section
 function createHomePage(){
     fetch('./src/site-text.json')
     .then(response => response.json())
@@ -13,25 +14,35 @@ function createHomePage(){
 }
 
 function createHeader(headerData){
-    const content = document.createElement("h2");
     const logoNode = document.createElement("img")
     logoNode.setAttribute("src", "./assets/logo-header.png")
     logoNode.setAttribute("id", "roshi-logo")
-    const titleNode = document.createTextNode(headerData[0]);
-    const detailNode = document.createTextNode(headerData[1]);
+    
+    const content = document.createElement("div");
+    content.setAttribute("id", "header-content")
 
-    content.appendChild(logoNode)
+    const titleNode = document.createElement('h1')
+    const titleText = document.createTextNode(headerData[0]);
+    titleNode.appendChild(titleText)
+
+    const detailNode = document.createElement('h4')
+    const detailText = document.createTextNode(headerData[1]);
+    detailNode.appendChild(detailText)
+
     content.appendChild(titleNode);
+    content.appendChild(document.createElement("br"))
     content.appendChild(detailNode);
     const header = document.getElementById("header-block");
+    header.appendChild(logoNode);
     header.appendChild(content);
 }
 
-
 function createFooter(footerData){
-    const content = document.createElement("h2");
-    const node = document.createTextNode(footerData);
-    content.appendChild(node)
+    const content = document.createElement("div")
+    const footerNode = document.createElement("h2");
+    const footerText = document.createTextNode(footerData);
+    footerNode.appendChild(footerText)
+    content.appendChild(footerNode)
     const element = document.getElementById("footer-block");
     element.appendChild(content);
 }
@@ -59,22 +70,32 @@ function createHomePageBody(bodyData){
     bodyContent.appendChild(rightContent);
 }
 
-
 function createAboutMe(aboutMeData){
-    const content = document.createElement('div')
-    content.setAttribute("id", "about-me")
-    content.setAttribute("class", "content")
-    aboutMeText = document.createTextNode(aboutMeData)
-    content.appendChild(aboutMeText)
+    const content = document.createElement('div');
+    content.setAttribute("id", "about-me");
+    content.setAttribute("class", "content");
+
+
+    aboutMeHeader = document.createElement("h3");
+    aboutMeHeader.appendChild(document.createTextNode("About Roshi's Pizza"));
+    aboutMeText = document.createTextNode(aboutMeData);
+    content.appendChild(aboutMeHeader);
+    content.appendChild(document.createElement("hr"));
+    content.appendChild(aboutMeText);
     return content;
 }
 
 function createSiteNews(siteNewsData){
-    const content = document.createElement('div')
-    content.setAttribute("id", "site-news")
-    content.setAttribute("class", "content")
-    siteNewsText = document.createTextNode(siteNewsData)
-    content.appendChild(siteNewsText)
+    const content = document.createElement('div');
+    content.setAttribute("id", "site-news");
+    content.setAttribute("class", "content");
+
+    siteNewsHeader = document.createElement("h3");
+    siteNewsHeader.appendChild(document.createTextNode("Site News"));
+    siteNewsText = document.createTextNode(siteNewsData);
+    content.appendChild(siteNewsHeader);
+    content.appendChild(document.createElement("hr"));
+    content.appendChild(siteNewsText);
     return content;
 }
 
@@ -105,6 +126,7 @@ function createProjectsList(projectsData){
     };
 
     content.appendChild(titleNode)
+    content.appendChild(document.createElement('hr'))
     content.appendChild(listNode)
     return content;
 }
