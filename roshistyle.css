@@ -1,22 +1,28 @@
 /* dimensions declared here */
 :root {
     --header-height: 200px;
-    --header-width: 60%;
+    --header-width: 50%;
     --header-radius: 10%;
 
     --content-width: 80%;
+    --content-padding: 10%;
+    --content-radius: 20%;
     --projects-radius: 20%;
 
     --footer-height: 60px;
     --footer-width: 60%;
-    --footer-radius: 20%;
+    --footer-radius: 40%;
 
-    --div-color: darkgray;
+    --background-color: rgb(196, 255, 196);
+    --border-color: rgba(6, 48, 16, 0.945);
+    --div-color: rgb(103, 112, 82);
     --content-color: rgb(114, 151, 114);
+
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 body {
-    background-color: lightslategray;
+    background-color: var(--background-color);
 }
 
 header{
@@ -30,6 +36,8 @@ header{
     display: flex;
     flex-direction: row;
     text-align: center;
+
+    color: var(--background-color);
 }
 
 #header-content {
@@ -47,17 +55,19 @@ footer{
     background-color: var(--div-color);
     height: var(--footer-height);
     width: var(--footer-width);
-    border-radius: var(--footer-radius);
+    border-bottom-left-radius: var(--footer-radius);
+    border-bottom-right-radius: var(--footer-radius);
     margin: auto;
     text-align: center;
 }
 
-#footer-content {
-    margin: auto;
+footer > div {
+    padding-top: 1px;
+    color: var(--background-color);
 }
 
-div {
-    background-color: darkgray;
+#footer-content {
+    margin: auto;
 }
 
 div.content{
@@ -66,13 +76,17 @@ div.content{
     margin: auto;
     
     text-align: center;
-    border-radius: var(--projects-radius);
+    border-radius: var(--content-radius);
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+    padding-bottom: var(--content-padding);
+
+    color: var(--background-color);
 }
 
 div.v-content-wrapper{
     display: flex;
     flex-direction: column;
-    background-color: inherit;
     flex-grow: inherit;
     padding: 2%;
     flex: 0 0 46%;
@@ -82,26 +96,17 @@ div.v-content-wrapper{
 div.h-content-wrapper{
     display: flex;
     flex-direction: row;
-    background-color: inherit;
     padding: 2%;
     width: 80%;
     margin: auto;
     
 }
 
-
-#about-me {
-
-}
-
-#site-news {
-
-}
-
 #projects-list{
     height: 100%;
+    font-size: large;
 }
 
 h3 {
-
+    font-size: larger;
 }

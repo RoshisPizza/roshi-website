@@ -8,14 +8,17 @@ function createHomePage(){
         createHomePageBody(data.content);
         createFooter(data.footer);
     }).catch(
-        // not sure why it catches an error, it generate es the page just fine
         console.log(`Error Fetching Data: {error}`)
     );
 }
 
-function createHeader(headerData){
+function createHeader(headerData, mainPage=false){
     const logoNode = document.createElement("img")
-    logoNode.setAttribute("src", "./assets/logo-header.png")
+    if(mainPage){
+        logoNode.setAttribute("src", "./assets/logo-header.png")
+    }else{
+        logoNode.setAttribute("src", "../assets/logo-header.png")
+    }
     logoNode.setAttribute("id", "roshi-logo")
     
     const content = document.createElement("div");
@@ -39,8 +42,10 @@ function createHeader(headerData){
 
 function createFooter(footerData){
     const content = document.createElement("div")
-    const footerNode = document.createElement("h2");
-    const footerText = document.createTextNode(footerData);
+    const footerNode = document.createElement("h3");
+    
+    const footerText = document.createElement('p');
+    footerText.appendChild(document.createTextNode(footerData));
     footerNode.appendChild(footerText)
     content.appendChild(footerNode)
     const element = document.getElementById("footer-block");
@@ -78,7 +83,8 @@ function createAboutMe(aboutMeData){
 
     aboutMeHeader = document.createElement("h3");
     aboutMeHeader.appendChild(document.createTextNode("About Roshi's Pizza"));
-    aboutMeText = document.createTextNode(aboutMeData);
+    aboutMeText = document.createElement("p");
+    aboutMeText.appendChild(document.createTextNode(aboutMeData));
     content.appendChild(aboutMeHeader);
     content.appendChild(document.createElement("hr"));
     content.appendChild(aboutMeText);
@@ -92,7 +98,8 @@ function createSiteNews(siteNewsData){
 
     siteNewsHeader = document.createElement("h3");
     siteNewsHeader.appendChild(document.createTextNode("Site News"));
-    siteNewsText = document.createTextNode(siteNewsData);
+    siteNewsText = document.createElement("p")
+    siteNewsText.appendChild(document.createTextNode(siteNewsData));
     content.appendChild(siteNewsHeader);
     content.appendChild(document.createElement("hr"));
     content.appendChild(siteNewsText);
@@ -108,7 +115,7 @@ function createProjectsList(projectsData){
     titleText = document.createTextNode("Projects")
     titleNode.appendChild(titleText)
 
-    listNode = document.createElement('ul')
+    listNode = document.createElement('span')
     content.appendChild(titleNode);
 
     // trying to use forEach on object; doesn't work
@@ -119,7 +126,7 @@ function createProjectsList(projectsData){
         projectLink.setAttribute("href", projectsData[element])
         projectLink.appendChild(projectText)
         
-        projectNode = document.createElement('li');
+        projectNode = document.createElement('p');
         projectNode.appendChild(projectLink)
 
         listNode.appendChild(projectNode)
@@ -130,3 +137,37 @@ function createProjectsList(projectsData){
     content.appendChild(listNode)
     return content;
 }
+
+
+//DovahPy Block
+
+function createDovahPyPage(){
+    fetch('../src/site-text.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        createHeader(data.header);
+        // createDovahBody(data.dovah);
+        createFooter(data.footer);
+    }).catch(
+        console.log(`Error Fetching Data: {error}`)
+    );
+}
+
+
+
+//Roshi Arcade Block
+function createArcadePage(){
+    fetch('../src/site-text.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        createHeader(data.header);
+        // createArcadeBody(data.dovah);
+        createFooter(data.footer);
+    }).catch(
+        console.log(`Error Fetching Data: {error}`)
+    );
+}
+
+
