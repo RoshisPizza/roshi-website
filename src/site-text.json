@@ -1,0 +1,19 @@
+{
+    "header": [
+        "Roshi's Pizza",
+        "Slow and Steady Will Always Win The Race"
+    ],
+    "content": {
+        "aboutMe": "Roshi's Pizza is a one-person development team in eastern Massachusetts.",
+        "siteNews": "Project Uploads Coming Soon!",
+        "projects": {
+            "DovahPy":"./pages/dovah.html",
+            "Roshi's Arcade":"./pages/arcade.html"
+        }
+    },
+    "footer": "email roshi@roshispizza.tech for inquiries",
+
+    "dovah": {
+        "projectDetails":"DovahPy is a python package."
+    }
+}
